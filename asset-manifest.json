@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.51f73394.chunk.css",
+    "main.js": "/portfolio/static/js/main.0626221b.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.0626221b.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.083a5c3f.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.083a5c3f.js.map",
+    "static/js/2.075747ab.chunk.js": "/portfolio/static/js/2.075747ab.chunk.js",
+    "static/js/2.075747ab.chunk.js.map": "/portfolio/static/js/2.075747ab.chunk.js.map",
+    "static/js/3.fe1fe576.chunk.js": "/portfolio/static/js/3.fe1fe576.chunk.js",
+    "static/js/3.fe1fe576.chunk.js.map": "/portfolio/static/js/3.fe1fe576.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/main.51f73394.chunk.css.map": "/portfolio/static/css/main.51f73394.chunk.css.map",
+    "static/js/2.075747ab.chunk.js.LICENSE.txt": "/portfolio/static/js/2.075747ab.chunk.js.LICENSE.txt",
+    "static/media/CMS-blog.jpg": "/portfolio/static/media/CMS-blog.dbe8310f.jpg",
+    "static/media/calculator.jpg": "/portfolio/static/media/calculator.bb6f4d8d.jpg",
+    "static/media/just-chattin.jpg": "/portfolio/static/media/just-chattin.1817042c.jpg",
+    "static/media/led-wall.jpg": "/portfolio/static/media/led-wall.c905c2d1.jpg",
+    "static/media/pastel-puzzels.jpg": "/portfolio/static/media/pastel-puzzels.5ff0a760.jpg",
+    "static/media/run-buddy.jpg": "/portfolio/static/media/run-buddy.b57f2b88.jpg",
+    "static/media/surf-report.jpg": "/portfolio/static/media/surf-report.6490cdfe.jpg",
+    "static/media/trip-planner.jpg": "/portfolio/static/media/trip-planner.3eb23b31.jpg",
+    "static/media/weather-dashboard.jpg": "/portfolio/static/media/weather-dashboard.482b9a11.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.083a5c3f.js",
+    "static/js/2.075747ab.chunk.js",
+    "static/css/main.51f73394.chunk.css",
+    "static/js/main.0626221b.chunk.js"
+  ]
+}
