@@ -2,8 +2,8 @@
   --header: #262836;
   --header-hover: #11121a;
   --background: #a3bbaa;
-  --text: #F9F9F9;
-  --text-hover: #b3aeae;
+  --text: rgba(63 ,233,69);
+  --text-hover: rgba(60,180,77);
   --border: #6d3d14;
   --highlight: 232,152,94;
 }
@@ -11,20 +11,21 @@
   background-color: var(--header);
 }
 
-.text {
+/* .text {
   color: var(--text);
+} */
+
+.home-section {
+  background-image: url('./assets/background/796839.jpg');
+  background-position: bottom center;
+  background-size:cover;
 }
 
-.App-header {
-  background-color: var(--background);
-  min-height: 100vh;
-}
-
-.hl {
+/* .hl {
   border: 1px solid var(--text);
   background-color: var(--text);
   border-radius: 2px;
-}
+} */
 
 .tabBtn{
   color: var(--text-hover);

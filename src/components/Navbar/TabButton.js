@@ -24,10 +24,10 @@ function TabBtn(props) {
                 if (thisTab !== currentTab) {
                     setActive(true); // set active and update current tab
     
-                    setVisible(false); // hide content
-                    setTimeout(()=>{
-                        setTab(thisTab); 
-                    },300)  // delay so that the animation is finished
+                    // setVisible(false); // hide content
+                    // setTimeout(()=>{
+                    //     setTab(thisTab); 
+                    // },300)  // delay so that the animation is finished
 
                 }
                 
