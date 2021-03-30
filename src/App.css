@@ -1,11 +1,11 @@
 :root {
-  --header: #262836;
+  --header: rgba(20,29,47);
   --header-hover: #11121a;
   --background: #a3bbaa;
   --text: rgba(63 ,233,69);
   --text-hover: rgba(60,180,77);
   --border: #6d3d14;
-  --highlight: 232,152,94;
+  --highlight: 224,33,66;
 }
 .header {
   background-color: var(--header);
@@ -29,9 +29,10 @@
 } */
 
 .tabBtn{
-  color: var(--text-hover);
-  font-weight: bolder;
-  border-radius: 5px;
+  color: white;
+  /* font-weight: bold; */
+  font-size: medium;
+  cursor:pointer;
 }
 
 div .tabActive{
@@ -41,7 +42,7 @@ div .tabActive{
 .tabBtn:hover {
   transition: 0.2s;
   color: var(--text);
-  background-color: var(--header-hover);
+  /* background-color: var(--header-hover); */
 }
 
 .container {
@@ -58,11 +59,6 @@ div .tabActive{
 
 .image-wrapper:hover {
   opacity: 0;
-}
-
-.project-container:hover {
-  border: 2px solid var(--border);
-  transition: 0.2s;
 }
 
 .project-text {
@@ -114,6 +110,14 @@ footer a:hover {
   text-decoration: none;
   color: var(--text);
 }
+
+@media screen and (max-width: 800px) {
+  .project-text {
+    opacity: 1;
+    background-color: rgba(var(--highlight),0.3);
+  }
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

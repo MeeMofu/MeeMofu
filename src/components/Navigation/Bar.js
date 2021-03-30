@@ -9,25 +9,11 @@ function NavBar({width, height}) {
     }
     return (
         <>
-            <Menu pointing secondary>
-                <Menu.Item
-                    name='home'
-                    active={activeItem === 'home'}
-                    onClick={handleItemClick}
-                    classname={'tabBtn'}
-                />
-                <Menu.Item
-                    name='messages'
-                    active={activeItem === 'messages'}
-                    onClick={handleItemClick}
-                />
-                <Menu.Item
-                    name='friends'
-                    active={activeItem === 'friends'}
-                    onClick={handleItemClick}
-                />
-            </Menu>
-            
+        <nav className="row no-gutters col-12 header">
+            <div className={`tabBtn text px-3 py-2 tabActive`}>Home </div>
+            <div className={`tabBtn text px-3 py-2 `}>About </div>
+            <div className={`tabBtn text px-3 py-2 `}>Portfolio </div>
+        </nav>
         </>
     )
 }

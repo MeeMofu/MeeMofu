@@ -1,8 +1,9 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import Nav from './components/Navbar';
-import Content from './components/PageContent';
 import NavigationBar from './components/Navigation/Bar';
+import About from './components/Tabs/About';
+import Portfolio from './components/Tabs/Portfolio';
+
 import Home from './components/Home';
 import Contact from './components/Contact';
 
@@ -40,8 +41,9 @@ function App() {
     <>
       <Home width={width} height= {height-50}/>
       <NavigationBar/>
-      <Contact/>
-  
+      <About/>
+      <Portfolio />
+      <Contact />
     </>
   );
 }

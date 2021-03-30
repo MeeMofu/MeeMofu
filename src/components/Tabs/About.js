@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <section className="my-5 px-2">
+    <section  className={'m-5 p-5'}>
       <div className="m-2 px-3 d-flex justified-contend-between">
         <div className="profile-img my-1 text-center text-md-left">
             <i className="fas fa-user-circle" style={{ fontSize: "96px", }}></i>
