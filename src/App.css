@@ -5,7 +5,7 @@
   --text: rgba(63 ,233,69);
   --text-hover: rgba(60,180,77);
   --border: #6d3d14;
-  --highlight: 224,33,66;
+  --highlight: 224,52,112;
 }
 .header {
   background-color: var(--header);

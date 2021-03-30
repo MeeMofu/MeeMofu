@@ -1,11 +1,9 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import NavigationBar from './components/Navigation/Bar';
-import About from './components/Tabs/About';
-import Portfolio from './components/Tabs/Portfolio';
-
+import PageContent from './components/Navigation/Bar';
 import Home from './components/Home';
-import Contact from './components/Contact';
+
+
 
 // Getting user's window dimension to fit sections
 // Credit to https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
@@ -39,11 +37,10 @@ function App() {
   const { height, width } = useWindowDimensions();
   return (
     <>
-      <Home width={width} height= {height-50}/>
-      <NavigationBar/>
-      <About/>
-      <Portfolio />
-      <Contact />
+      <Home width={width} height= {height-43.33}/> 
+      {/* 43.33 is the width of the Navigation bar */}
+        <PageContent width={width} height= {height-43.33}/>
+      
     </>
   );
 }

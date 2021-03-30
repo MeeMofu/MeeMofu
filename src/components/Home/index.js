@@ -2,7 +2,7 @@ import React from 'react';
 
 function Home({width, height}) {
     return(
-        <div className={"home-section text-center d-flex align-items-center justify-content-center"} style={{minHeight:550,height:height,fontFamily: "Ubuntu Mono",color:'white'}}>
+        <div className={"home-section text-center d-flex align-items-center justify-content-center"} style={{minHeight:300,height:height,fontFamily: "Ubuntu Mono",color:'white'}}>
             <div style={{backgroundColor:'rgba(10,15,22,0.8', borderRadius:'5vw'}} className={'p-5 mx-3'}>
                 <p style={(width>600)?
                     {fontSize:"40px"}:
