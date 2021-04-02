@@ -5,7 +5,7 @@
   --text: rgba(63 ,233,69);
   --text-hover: rgba(60,180,77);
   --border: #6d3d14;
-  --highlight: 224,52,112;
+  --highlight: 63 ,233,69;
 }
 .header {
   background-color: var(--header);
@@ -67,7 +67,7 @@ div .tabActive{
   bottom: 0px;
   left: 0px;
   right: 0px;
-  z-index: 900;
+  z-index: 10;
   opacity: 0;
   transition: all .5s ease-in-out;
 }

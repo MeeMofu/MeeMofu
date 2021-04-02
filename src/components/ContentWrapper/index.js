@@ -1,11 +1,17 @@
-import React, {useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {Sticky} from 'semantic-ui-react';
 import About from '../Tabs/About';
 import Portfolio from '../Tabs/Portfolio';
 import Contact from '../Contact';
 
-const PageContent = ()=> {
+const ContentWrapper = ()=> {
     const pageRef = useRef(null);
+    // Create ref for the sticky container & header
+    useEffect (()=>{
+        console.log("Content mounted");
+    },[]);
+    
+
 
     return (
         <div ref={pageRef}>
@@ -27,4 +33,4 @@ const PageContent = ()=> {
 
 }
 
-export default PageContent;
+export default ContentWrapper;

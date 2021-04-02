@@ -1,18 +1,17 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import PageContent from './components/Navigation/Bar';
 import Home from './components/Home';
-
-
+import ContentWrapper from './components/ContentWrapper';
+import {Visibility} from 'semantic-ui-react';
 
 // Getting user's window dimension to fit sections
 // Credit to https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
 
 function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
+  const { innerWidth: windowWidth, innerHeight: windowHeight } = window;
   return {
-    width,
-    height
+    windowWidth,
+    windowHeight
   };
 }
 function useWindowDimensions() {
@@ -32,15 +31,31 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-
 function App() {
-  const { height, width } = useWindowDimensions();
+  const [currentSection,setActiveSection] = useState(0);
+  
+  // const [homeVisibility,setHome] = useState({
+  //   percentagePassed: 0,
+  //   topVisible: false,
+  //   bottomVisible: false,
+  //   fits: false,
+  //   passing: false,
+  //   onScreen: false,
+  //   offScreen: false,});
+  
+  const handleUpdate = (e,{calculations}) => {
+    // console.log(state);
+    const {bottomVisible, topVisible} = calculations;
+    if (bottomVisible && topVisible) console.log('HOME');
+  }
+  const { windowHeight, windowWidth } = useWindowDimensions();
   return (
     <>
-      <Home width={width} height= {height-43.33}/> 
-      {/* 43.33 is the width of the Navigation bar */}
-        <PageContent width={width} height= {height-43.33}/>
+      <Visibility fireOnMount onUpdate={handleUpdate}>
+        <Home windowWidth={windowWidth} windowHeight= {windowHeight-43.33}/>  {/* 43.33 is the height of the Navigation bar */}
+      </Visibility>
       
+      <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight-43.33}/>
     </>
   );
 }
