@@ -13,14 +13,15 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
 
     useEffect(()=>{
         const temp = compHeight;
-        temp[1]=windowHeight;
+        temp[0]=windowHeight;
         setCompHeight(temp);
     },[compHeight,windowHeight])
 
     return (
         <div ref={pageRef}>
             <Sticky context={pageRef}>
-                <NavBar windowWidth= {windowWidth} currentSection={currentSection} compHeight={compHeight}/>
+                <NavBar windowWidth= {windowWidth}  compHeight={compHeight}
+                    currentSection={currentSection} setActiveSection={setActiveSection}/>
             </Sticky>
             <About index={1} windowHeight= {windowHeight}
                 compHeight={compHeight} setCompHeight={setCompHeight}
