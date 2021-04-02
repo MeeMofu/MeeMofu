@@ -7,8 +7,8 @@ function Portfolio({index,compHeight,setCompHeight,setActiveSection}) {
   const handleUpdate = (e,{calculations}) => {
     // Function to set the active section (based on position of the widow)
     // Select conditions for the section to be active
-    const {topVisible, bottomVisible, topPassed, passing, onScreen, height} = calculations;
-    if (topPassed && passing && onScreen) setActiveSection(index);
+    const {topVisible, bottomVisible, topPassed, passing, onScreen, direction, height} = calculations;
+    if ( passing && ((topPassed && direction==='down')|| (direction==='up'&& bottomVisible))) setActiveSection(index);
 
     // Update the height if the height has changed
     if (height !== compHeight[index]){

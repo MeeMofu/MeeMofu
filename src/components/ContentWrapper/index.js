@@ -1,13 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {Sticky} from 'semantic-ui-react';
 import About from '../Tabs/About';
 import NavBar from './Navbar';
 import Portfolio from '../Tabs/Portfolio';
 import Contact from '../Contact';
 import Headroom from 'react-headroom';
 
-const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSection})=> {
-    const pageRef = useRef(null);
+const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSection,appRef})=> {
+    const contentRef = useRef(null);
     // Create ref for the sticky container & header
     const [compHeight,setCompHeight] = useState([0,0,0,0]);
 
@@ -18,11 +17,10 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
     },[compHeight,windowHeight])
 
     return (
-        <div ref={pageRef}>
-            <Sticky context={pageRef}>
-                <NavBar windowWidth= {windowWidth}  compHeight={compHeight}
-                    currentSection={currentSection} setActiveSection={setActiveSection}/>
-            </Sticky>
+        <div ref={contentRef}>
+            <NavBar windowWidth= {windowWidth}  compHeight={compHeight} context={contentRef}
+                currentSection={currentSection} setActiveSection={setActiveSection} appRef={appRef}/>
+            
             <About index={1} windowHeight= {windowHeight}
                 compHeight={compHeight} setCompHeight={setCompHeight}
                 setActiveSection={setActiveSection}/>

@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import Home from './components/Home';
 import ContentWrapper from './components/ContentWrapper';
 
@@ -39,14 +39,15 @@ function App() {
   // 3: Contact
 
   const { windowHeight, windowWidth } = useWindowDimensions();
+  const appRef = useRef(null);
 
   return (
-    <>
+    <div ref={appRef}>
       <Home windowWidth={windowWidth} windowHeight= {windowHeight} 
         setActiveSection={setActiveSection}/>  
       <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight}
-        currentSection={currentSection} setActiveSection={setActiveSection}/>
-    </>
+        currentSection={currentSection} setActiveSection={setActiveSection} appRef={appRef}/>
+    </div>
   );
 }
 
