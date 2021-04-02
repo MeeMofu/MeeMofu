@@ -2,7 +2,6 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 import Home from './components/Home';
 import ContentWrapper from './components/ContentWrapper';
-import {Visibility} from 'semantic-ui-react';
 
 // Getting user's window dimension to fit sections
 // Credit to https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
@@ -33,29 +32,20 @@ function useWindowDimensions() {
 
 function App() {
   const [currentSection,setActiveSection] = useState(0);
-  
-  // const [homeVisibility,setHome] = useState({
-  //   percentagePassed: 0,
-  //   topVisible: false,
-  //   bottomVisible: false,
-  //   fits: false,
-  //   passing: false,
-  //   onScreen: false,
-  //   offScreen: false,});
-  
-  const handleUpdate = (e,{calculations}) => {
-    // console.log(state);
-    const {bottomVisible, topVisible} = calculations;
-    if (bottomVisible && topVisible) console.log('HOME');
-  }
+  // This will be the state of the Nav bar. The value can be
+  // 0: Home
+  // 1: About
+  // 2: Portfollio
+  // 3: Contact
+
   const { windowHeight, windowWidth } = useWindowDimensions();
+
   return (
     <>
-      <Visibility fireOnMount onUpdate={handleUpdate}>
-        <Home windowWidth={windowWidth} windowHeight= {windowHeight-43.33}/>  {/* 43.33 is the height of the Navigation bar */}
-      </Visibility>
-      
-      <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight-43.33}/>
+      <Home windowWidth={windowWidth} windowHeight= {windowHeight} 
+        setActiveSection={setActiveSection}/>  
+      <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight}
+        currentSection={currentSection} setActiveSection={setActiveSection}/>
     </>
   );
 }
