@@ -44,6 +44,10 @@ div .tabActive{
   color: var(--text);
   background-color: var(--header-hover);
 } */
+#canvas {
+  width: 100%;
+  height: 100%;
+  }
 
 .container {
   max-width: 100%;

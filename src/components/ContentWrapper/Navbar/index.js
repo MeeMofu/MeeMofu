@@ -8,7 +8,7 @@ import { slide as Menu } from 'react-burger-menu'
 
 const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context})=>{
 
-    const Buttons = ['Home', 'About', 'Portfolio'];
+    const Buttons = ['Home', 'About', 'Portfolio','Contact'];
     
     if (windowWidth>600)
         return (
@@ -28,14 +28,14 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
             </Sticky>
         )
     else return (
-        <Headroom style={{zIndex:900}}>
+        <Headroom style={{zIndex:900, }}>
             <ScrollTo>
                     {({scroll}) => (
-                        <nav className="row no-gutters col-12 header py-1" style={{borderBottom:'3px solid var(--text-hover)'}}>
+                        <nav className="no-gutters col-12 header p-1" style={{borderBottom:'3px solid var(--text-hover)',overflowX: 'auto', overflowY:'hidden', width: '100%',whiteSpace:'nowrap', height:43.33, textAlign:'center'}}>
                                 {Buttons.map((button, index)=>{
                                     return <NavButton index = {index} name = {button} scroll={scroll}
                                         currentSection={currentSection} setActiveSection={setActiveSection}
-                                        compHeight={compHeight} key={`BarButton-${index}`}/>
+                                        compHeight={compHeight} key={`BarButton-${index}` }isMobile={windowWidth}/>
                                 })}
                         </nav>
                     )}

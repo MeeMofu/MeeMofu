@@ -8,12 +8,15 @@ import Headroom from 'react-headroom';
 const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSection,appRef})=> {
     const contentRef = useRef(null);
     // Create ref for the sticky container & header
-    const [compHeight,setCompHeight] = useState([0,0,0,0]);
+    const [compHeight,setCompHeight] = useState([windowHeight,0,0,0]);
 
     useEffect(()=>{
-        const temp = compHeight;
-        temp[0]=windowHeight;
-        setCompHeight(temp);
+        if (windowHeight !== compHeight[0]){
+            const temp = compHeight;
+            temp[0]=windowHeight;
+            setCompHeight(temp);
+        }
+        
     },[compHeight,windowHeight])
 
     return (

@@ -6,8 +6,8 @@ function About({index,compHeight,setCompHeight,setActiveSection}) {
   const handleUpdate = (e,{calculations}) => {
     // Function to set the active section (based on position of the widow)
     // Select conditions for the section to be active
-    const {bottomVisible, topPassed, passing, onScreen, direction, height} = calculations;
-    if ( passing && ((topPassed && direction==='down')|| (direction==='up' && bottomVisible))) setActiveSection(index);
+    const {onScreen, topPassed, passing, percentagePassed, direction, height} = calculations;
+    if ( onScreen && ((topPassed && direction==='down')|| (percentagePassed<0.5 &&direction==='up'))) setActiveSection(index);
 
     // Update the height if the height has changed
     if (height !== compHeight[index]){
@@ -20,8 +20,8 @@ function About({index,compHeight,setCompHeight,setActiveSection}) {
   return (
     <Visibility fireOnMount onUpdate={handleUpdate}>
 
-      <div  className='p-5' style={{height:compHeight[0]}}>
-        <div className="m-2 px-3 d-flex justified-contend-between">
+      <div style={{height: compHeight[0]*5}}>
+        <div className="px-3 d-flex justified-contend-between">
           <div className="profile-img my-1 text-center text-md-left">
               <i className="fas fa-user-circle" style={{ fontSize: "96px", }}></i>
           </div>

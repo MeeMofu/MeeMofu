@@ -7,9 +7,9 @@ function Portfolio({index,compHeight,setCompHeight,setActiveSection}) {
   const handleUpdate = (e,{calculations}) => {
     // Function to set the active section (based on position of the widow)
     // Select conditions for the section to be active
-    const {topVisible, bottomVisible, topPassed, passing, onScreen, direction, height} = calculations;
-    if ( passing && ((topPassed && direction==='down')|| (direction==='up'&& bottomVisible))) setActiveSection(index);
-
+    const {topVisible, bottomVisible, topPassed, onScreen, percentagePassed, direction, height} = calculations;
+    if ( onScreen && ((topPassed && direction==='down')|| (percentagePassed<0.5 &&direction==='up'))) setActiveSection(index);
+    // console.log((topPassed && direction==='down'));
     // Update the height if the height has changed
     if (height !== compHeight[index]){
       const temp = compHeight;
@@ -53,8 +53,8 @@ function Portfolio({index,compHeight,setCompHeight,setActiveSection}) {
   ]);
 
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate}>
-      <div className="row ">
+    <Visibility fireOnMount onUpdate={handleUpdate} offset={[0,100]}>
+      <div className="row">
         {projects.map((project, idx) => (
           <Project
             project={project}
