@@ -1,26 +1,10 @@
 import React from 'react';
-import {Visibility} from 'semantic-ui-react';
 
 
-function About({index,compHeight,setCompHeight,setActiveSection}) {
-  const handleUpdate = (e,{calculations}) => {
-    // Function to set the active section (based on position of the widow)
-    // Select conditions for the section to be active
-    const {onScreen, topPassed, percentagePassed, direction, height} = calculations;
-    if ( onScreen && ((topPassed && direction==='down')|| (percentagePassed<0.5 &&direction==='up'))) setActiveSection(index);
-
-    // Update the height if the height has changed
-    if (height !== compHeight[index]){
-      const temp = compHeight;
-        temp[index]=height;
-        setCompHeight(temp);
-    }
-}
-
+function About() {
+  
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate}>
-
-      <div style={{height: compHeight[0]*5}}>
+      <div style={{height: 3000}}>
         <div className="px-3 d-flex justified-contend-between">
           <div className="profile-img my-1 text-center text-md-left">
               <i className="fas fa-user-circle" style={{ fontSize: "96px", }}></i>
@@ -39,7 +23,6 @@ function About({index,compHeight,setCompHeight,setActiveSection}) {
             
         </div>
       </div>
-    </Visibility>
   );
 }
 

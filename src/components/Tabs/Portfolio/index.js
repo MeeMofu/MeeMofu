@@ -1,22 +1,8 @@
 import React, { useState } from 'react';
-import {Visibility} from 'semantic-ui-react';
 
 import Project from "./Project";
 
-function Portfolio({index,compHeight,setCompHeight,setActiveSection}) {
-  const handleUpdate = (e,{calculations}) => {
-    // Function to set the active section (based on position of the widow)
-    // Select conditions for the section to be active
-    const {topPassed, onScreen, percentagePassed, direction, height} = calculations;
-    if ( onScreen && ((topPassed && direction==='down')|| (percentagePassed<0.5 &&direction==='up'))) setActiveSection(index);
-    // console.log((topPassed && direction==='down'));
-    // Update the height if the height has changed
-    if (height !== compHeight[index]){
-      const temp = compHeight;
-        temp[index]=height;
-        setCompHeight(temp);
-    }
-}
+function Portfolio() {
 
   // Replace links with deployed projects and GitHub repos
   const [projects] = useState([
@@ -53,7 +39,6 @@ function Portfolio({index,compHeight,setCompHeight,setActiveSection}) {
   ]);
 
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate} offset={[0,100]}>
       <div className="row">
         {projects.map((project, idx) => (
           <Project
@@ -62,7 +47,6 @@ function Portfolio({index,compHeight,setCompHeight,setActiveSection}) {
           />
         ))}
       </div>
-    </Visibility>
       
   );
 };

@@ -4,7 +4,6 @@ import {Sticky} from 'semantic-ui-react';
 
 import Headroom from 'react-headroom';
 import {ScrollTo} from 'react-scroll-to';
-import { slide as Menu } from 'react-burger-menu'
 
 const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context})=>{
 

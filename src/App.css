@@ -1,5 +1,5 @@
 :root {
-  --header: rgba(20,29,47);
+  --header: #11121a;
   --header-hover: #11121a;
   --background: #a3bbaa;
   --text: rgba(63 ,233,69);
@@ -31,7 +31,7 @@
 .tabBtn{
   color: white;
   /* font-weight: bold; */
-  transition: color 0.5s ease;
+  transition: color 0.4s ease;
   font-size: medium;
   cursor:pointer;
 }
@@ -39,12 +39,11 @@
 div .tabActive{
   color: var(--text);
 }
-/* 
+
 .tabBtn:hover {
   transition: 0.2s;
   color: var(--text);
-  background-color: var(--header-hover);
-} */
+}
 #canvas {
   width: 100%;
   height: 100%;

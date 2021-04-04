@@ -1,9 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
-import About from '../Tabs/About';
 import NavBar from './Navbar';
-import Portfolio from '../Tabs/Portfolio';
 import Contact from '../Contact';
-import Headroom from 'react-headroom';
+import Content from './Content';
 
 const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSection})=> {
     const contentRef = useRef(null);
@@ -11,6 +9,7 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
     const [compHeight,setCompHeight] = useState([windowHeight,0,0,0]);
 
     useEffect(()=>{
+        // Update Home Height.
         if (windowHeight !== compHeight[0]){
             const temp = compHeight;
             temp[0]=windowHeight;
@@ -23,13 +22,13 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
         <div ref={contentRef}>
             <NavBar windowWidth= {windowWidth}  compHeight={compHeight} context={contentRef}
                 currentSection={currentSection} setActiveSection={setActiveSection}/>
+            <Content index={1} name={'About'} windowHeight= {windowHeight}
+                compHeight={compHeight} setCompHeight={setCompHeight}
+                setActiveSection={setActiveSection}/>
+            <Content index={2} name={'Portfolio'} windowHeight= {windowHeight}
+                compHeight={compHeight} setCompHeight={setCompHeight}
+                setActiveSection={setActiveSection}/>
             
-            <About index={1} windowHeight= {windowHeight}
-                compHeight={compHeight} setCompHeight={setCompHeight}
-                setActiveSection={setActiveSection}/>
-            <Portfolio index={2} windowHeight= {windowHeight}
-                compHeight={compHeight} setCompHeight={setCompHeight}
-                setActiveSection={setActiveSection}/>
             <Contact windowHeight= {windowHeight}/>
         </div>
         

@@ -33,7 +33,7 @@ export default class Canvas extends Component {
         
         let canvas = oCanvas.create({
             canvas: '#canvas',
-            background: '#2c3e50',
+            background: 'rgba(20,29,47)',
             fps: 60
         });
 
@@ -63,17 +63,17 @@ export default class Canvas extends Component {
                 y: randomPlacement(windowYArray,$(window).innerHeight()),
                 origin: { x: 'center', y: 'center' },
                 radius: 0,
-                fill: '#27ae60',
+                fill: 'rgba(60,180,77)',
                 opacity: 1
             });
             
             canvas.addChild(rectangle);
             
             rectangle.animate({
-                radius: 10,
+                radius: 15,
                 opacity: 0
                 }, {
-                duration: '1000',
+                duration: '3000',
                 easing: 'linear',
                 callback: function () {
                             this.remove();
