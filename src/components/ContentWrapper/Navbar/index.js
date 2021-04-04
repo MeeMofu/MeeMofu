@@ -9,17 +9,19 @@ import { slide as Menu } from 'react-burger-menu'
 const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context})=>{
 
     const Buttons = ['Home', 'About', 'Portfolio','Contact'];
+    const [isScroll, setScroll] = useState(false);
     
     if (windowWidth>600)
         return (
             <Sticky context={context}>
                 <ScrollTo>
                     {({scroll}) => (
-                        <nav className="row no-gutters col-12 header py-1" style={{borderBottom:'3px solid var(--text-hover)'}}>
+                        <nav className="row no-gutters col-12 header py-1" style={{borderBottom:'3px solid var(--text-hover)',width:windowWidth}}>
                                 {Buttons.map((button, index)=>{
                                     return <NavButton index = {index} name = {button} scroll={scroll}
                                         currentSection={currentSection} setActiveSection={setActiveSection}
-                                        compHeight={compHeight} key={`BarButton-${index}`}/>
+                                        compHeight={compHeight} key={`BarButton-${index}`}
+                                        isScroll={isScroll} setScroll={setScroll}/>
                                 })}
                         </nav>
                     )}
@@ -28,14 +30,15 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
             </Sticky>
         )
     else return (
-        <Headroom style={{zIndex:900, }}>
+        <Headroom style={{zIndex:900}}>
             <ScrollTo>
                     {({scroll}) => (
-                        <nav className="no-gutters col-12 header p-1" style={{borderBottom:'3px solid var(--text-hover)',overflowX: 'auto', overflowY:'hidden', width: '100%',whiteSpace:'nowrap', height:43.33, textAlign:'center'}}>
+                        <nav className="no-gutters col-12 header p-1" style={{borderBottom:'3px solid var(--text-hover)',overflowX: 'auto', overflowY:'hidden', width: windowWidth,whiteSpace:'nowrap', height:43.33, textAlign:'center'}}>
                                 {Buttons.map((button, index)=>{
                                     return <NavButton index = {index} name = {button} scroll={scroll}
                                         currentSection={currentSection} setActiveSection={setActiveSection}
-                                        compHeight={compHeight} key={`BarButton-${index}` }isMobile={windowWidth}/>
+                                        compHeight={compHeight} key={`BarButton-${index}` }isMobile={windowWidth}
+                                        isScroll={isScroll} setScroll={setScroll}/>
                                 })}
                         </nav>
                     )}

@@ -5,7 +5,7 @@ import Portfolio from '../Tabs/Portfolio';
 import Contact from '../Contact';
 import Headroom from 'react-headroom';
 
-const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSection,appRef})=> {
+const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSection})=> {
     const contentRef = useRef(null);
     // Create ref for the sticky container & header
     const [compHeight,setCompHeight] = useState([windowHeight,0,0,0]);
@@ -22,7 +22,7 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
     return (
         <div ref={contentRef}>
             <NavBar windowWidth= {windowWidth}  compHeight={compHeight} context={contentRef}
-                currentSection={currentSection} setActiveSection={setActiveSection} appRef={appRef}/>
+                currentSection={currentSection} setActiveSection={setActiveSection}/>
             
             <About index={1} windowHeight= {windowHeight}
                 compHeight={compHeight} setCompHeight={setCompHeight}

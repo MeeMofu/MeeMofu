@@ -9,45 +9,58 @@ export default class Canvas extends Component {
         animatedScript.setAttribute("id", "animate");
         document.getElementById('container').appendChild(animatedScript);
         document.getElementById('animate').innerHTML=`
-        // Hardcoded script to animate canvas. Creator of the original code can be found here:
+        // Hardcoded script to animate canvas that's appended after mount. Original, unmodified code can be found here:
         //  https://codepen.io/html5andblog/details/jWbLbj
         
-        var windowXArray = [];
-        var windowYArray = [];
+        let windowXArray = [];
+        let windowYArray = [];
         
-        for (var i = 0; i < $(window).innerWidth(); i++) {
+        const startWidth = $(window).innerWidth();
+        const startHeight = $(window).innerHeight();
+
+        for (let i = 0; i < startWidth; i++) {
             windowXArray.push(i);
         }
             
-        for (var i = 0; i < $(window).innerHeight(); i++) {
+        for (let i = 0; i < startHeight; i++) {
             windowYArray.push(i);
         }
         
         function randomPlacement(array,length) {
-            var placement = array[Math.floor(Math.random()*length)];
-            return placement;
+            return array[Math.floor(Math.random()*length)];
         }
             
         
-        var canvas = oCanvas.create({
+        let canvas = oCanvas.create({
             canvas: '#canvas',
             background: '#2c3e50',
             fps: 60
         });
+
+        canvas.width = startWidth;
+        canvas.height = startHeight;
+
         setInterval(function(){
-            // Handle size increase at every interval
-            for (var i = canvas.width; i < window.innerWidth; i++) {
-                windowXArray.push(i);
+
+            // Handle size increase at every interval, size decrease doesn't matter
+            if ($(window).innerWidth()!==canvas.width) {
+                const temp = $(window).innerWidth();
+                for (let i = canvas.width; i < temp; i++) {
+                    windowXArray.push(i);
+                }
+                canvas.width = temp;
             }
-            for (var i = canvas.height; i < window.innerHeight; i++) {
-                windowYArray.push(i);
+            if ($(window).innerHeight()!==canvas.height) {
+                const temp = $(window).innerHeight();
+                for (let i = canvas.height; i < temp; i++) {
+                    windowYArray.push(i);
+                }
+                canvas.height = temp;
             }
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            var rectangle = canvas.display.ellipse({
-                x: randomPlacement(windowXArray,canvas.width),
-                y: randomPlacement(windowYArray,canvas.height),
+
+            const rectangle = canvas.display.ellipse({
+                x: randomPlacement(windowXArray,$(window).innerWidth()),
+                y: randomPlacement(windowYArray,$(window).innerHeight()),
                 origin: { x: 'center', y: 'center' },
                 radius: 0,
                 fill: '#27ae60',

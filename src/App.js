@@ -39,14 +39,13 @@ function App() {
   // 3: Contact
 
   const { windowHeight, windowWidth } = useWindowDimensions();
-  const appRef = useRef(null);
 
   return (
-    <div ref={appRef}>
+    <div>
       <Home windowWidth={windowWidth} windowHeight= {windowHeight} 
         setActiveSection={setActiveSection}/>  
       <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight}
-        currentSection={currentSection} setActiveSection={setActiveSection} appRef={appRef}/>
+        currentSection={currentSection} setActiveSection={setActiveSection} />
     </div>
   );
 }

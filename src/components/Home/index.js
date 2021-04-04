@@ -14,10 +14,8 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
 
     return(
       <Visibility fireOnMount onUpdate={handleUpdate}>
-        {/* <div className={"home-section text-center d-flex align-items-center justify-content-center"} style={{minHeight:300,height:(windowWidth>600?windowHeight-navHeight:windowHeight),fontFamily: "Ubuntu Mono",color:'white'}}> */}
-        {/* </div> */}
-        <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight)} />
-         <div style={{backgroundColor:'rgba(10,15,22,0.8', borderRadius:'5vw'}} className={'p-5 mx-3'}>
+        <div className={"text-center d-flex align-items-center justify-content-center"} style={{minHeight:300,height:(windowWidth>600?windowHeight-navHeight:windowHeight),position:'relative',fontFamily: "Ubuntu Mono",color:'white'}}>
+         <div style={{backgroundColor:'rgba(10,15,22,0.8', borderRadius:'5vw', position:'absolute'}} className={'p-5 mx-3'}>
                 <p style={(windowWidth>600)?
                     {fontSize:"40px"}:
                     {fontSize:"7vw"}} className={'m-0'}>
@@ -33,6 +31,9 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
                     >Electrical Engineer {'&'} full stack web developer</p>
                 {(windowWidth<600) && <i className={"fas fa-mug-hot pt-5"} style={{fontSize:"20vw",color:' var(--text)'}}></i>}
             </div>
+            <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight)} />
+
+        </div>
       </Visibility>
 
     )

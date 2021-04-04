@@ -6,7 +6,7 @@ function About({index,compHeight,setCompHeight,setActiveSection}) {
   const handleUpdate = (e,{calculations}) => {
     // Function to set the active section (based on position of the widow)
     // Select conditions for the section to be active
-    const {onScreen, topPassed, passing, percentagePassed, direction, height} = calculations;
+    const {onScreen, topPassed, percentagePassed, direction, height} = calculations;
     if ( onScreen && ((topPassed && direction==='down')|| (percentagePassed<0.5 &&direction==='up'))) setActiveSection(index);
 
     // Update the height if the height has changed
