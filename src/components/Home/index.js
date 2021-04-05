@@ -12,26 +12,46 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
         // set current section to 0, which is Home
     }
 
+    const styling = {
+        background:{
+            background:' rgb(19,68,106)',
+            background: 'linear-gradient(307deg, rgba(19,68,106,1) 0%, rgba(26,117,159,1) 60%, rgba(82,182,154,1) 100%)',
+        },
+        shader: {
+            background:'var(--deepen)',
+            position:'relative',
+            width:'100%',
+            height:'100%',
+            display:'flex',
+            textAlign:'center',
+            alignItems:'center',
+            justifyContent:'center'
+        },
+        container:{
+            position:'absolute',
+            color:'white',
+            textShadow:'2px 2px 3px rgba(0,48,73,0.97)',
+        }
+    }
+
     return(
       <Visibility fireOnMount onUpdate={handleUpdate}>
-        <div className={"text-center d-flex align-items-center justify-content-center"} style={{height:(windowWidth>600?windowHeight-navHeight:windowHeight),position:'relative'}}>
-         <div style={{ position:'absolute',fontFamily: "Ubuntu Mono",color:'white'}} className={'p-5 mx-3'}>
-                <p style={(windowWidth>600)?
-                    {fontSize:"40px"}:
-                    {fontSize:"7vw"}} className={'m-0'}>
-                        Please to meet you, I am
-                </p>
+        <div style={styling.background}>
+            <div style={styling.shader}>
+
+         <div style={styling.container} className={'p-5 mx-3'}>
                 <p style ={(windowWidth>600)?
-                    {fontSize:"80px",color:' var(--text)', fontWeight:'bold'}:
-                    {fontSize:"12vw",color:' var(--text)', fontWeight:'bold'}} 
-                    className={'p-2 m-0'}>Vinh Tran</p>
+                    {fontSize:"50px",fontWeight:'bold'}:
+                    {fontSize:"12vw", fontWeight:'bold'}} 
+                    className={'p-2 m-0'}>VINH TRAN</p>
                 <p style={(windowWidth>600)?
-                    {fontSize:"30px"}:
+                    {fontSize:"20px"}:
                     {fontSize:"5.5vw"}} className={'m-0'}
                     >Electrical Engineer {'&'} full stack web developer</p>
-                {(windowWidth<600) && <i className={"fas fa-mug-hot pt-5"} style={{fontSize:"20vw",color:' var(--text)'}}></i>}
+                <i className={"fas fa-mug-hot pt-5"} style={{fontSize:`${(windowWidth>600)?'100px':'20vw'}`, color:' var(--text)'}}></i>
             </div>
             <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight)} />
+            </div>
 
         </div>
       </Visibility>

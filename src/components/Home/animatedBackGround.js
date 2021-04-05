@@ -33,7 +33,7 @@ export default class Canvas extends Component {
         
         let canvas = oCanvas.create({
             canvas: '#canvas',
-            background: 'rgba(20,29,47)',
+            // background: '#154A7F',
             fps: 60
         });
 
@@ -58,29 +58,31 @@ export default class Canvas extends Component {
                 canvas.height = temp;
             }
 
-            const rectangle = canvas.display.ellipse({
+            const rectangle = canvas.display.polygon({
                 x: randomPlacement(windowXArray,$(window).innerWidth()),
                 y: randomPlacement(windowYArray,$(window).innerHeight()),
                 origin: { x: 'center', y: 'center' },
+                sides:6,
+                rotation: Math.floor(Math.random()*90),
                 radius: 0,
-                fill: 'rgba(60,180,77)',
+                fill: '#d9ed92',
                 opacity: 1
             });
             
             canvas.addChild(rectangle);
             
             rectangle.animate({
-                radius: 15,
+                radius: 20,
                 opacity: 0
                 }, {
-                duration: '3000',
+                duration: '10000',
                 easing: 'linear',
                 callback: function () {
                             this.remove();
                     }
             });
 
-        }, 100);
+        }, 200);
 
 `
     }

@@ -1,11 +1,12 @@
 :root {
-  --header: #11121a;
+  --header: #092d52;
   --header-hover: #11121a;
-  --background: #a3bbaa;
-  --text: rgba(63 ,233,69);
-  --text-dark: rgb(34, 189, 57);
+  --background: #EDF2F4;
+  --text: #c6e46d;
+  --text-dark: #48B880;
   --border: #6d3d14;
   --highlight: 63 ,233,69;
+  --deepen: #0c2f5269;
 }
 .header {
   background-color: var(--header);
@@ -20,6 +21,8 @@
   background-position: bottom center;
   background-size:cover;
 }
+
+h1 { font-family: Arvo; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Arvo; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Arvo; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Arvo; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Arvo; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
 
 /* .hl {

@@ -9,13 +9,15 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
 
     const Buttons = ['Home', 'About', 'Portfolio','Contact'];
     const [isScroll, setScroll] = useState(false);
+
+    
     
     if (windowWidth>600)
         return (
             <Sticky context={context}>
                 <ScrollTo>
                     {({scroll}) => (
-                        <nav className="row no-gutters col-12 header py-1 px-md-5" style={{borderBottom:'3px solid var(--text-dark)',width:windowWidth}}>
+                        <nav className="row no-gutters col-12 header py-1 px-md-5" style={{borderBottom:'3px solid var(--text)',width:windowWidth}}>
                                 {Buttons.map((button, index)=>{
                                     return <NavButton index = {index} name = {button} scroll={scroll}
                                         currentSection={currentSection} setActiveSection={setActiveSection}
@@ -32,7 +34,7 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
         <Headroom style={{zIndex:900}}>
             <ScrollTo>
                     {({scroll}) => (
-                        <nav className="no-gutters col-12 header p-1" style={{borderBottom:'3px solid var(--text-hover)',overflowX: 'auto', overflowY:'hidden', width: windowWidth,whiteSpace:'nowrap', height:43.33, textAlign:'center'}}>
+                        <nav className="no-gutters col-12 header p-1" style={{borderBottom:'3px solid var(--text)',overflowX: 'auto', overflowY:'hidden', width: windowWidth,whiteSpace:'nowrap', height:43.33, textAlign:'center'}}>
                                 {Buttons.map((button, index)=>{
                                     return <NavButton index = {index} name = {button} scroll={scroll}
                                         currentSection={currentSection} setActiveSection={setActiveSection}

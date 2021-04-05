@@ -19,7 +19,7 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
     },[compHeight,windowHeight]);
 
     return (
-        <div ref={contentRef}>
+        <div ref={contentRef} style={{backgroundColor:'var(--background)'}}>
             <NavBar windowWidth= {windowWidth}  compHeight={compHeight} context={contentRef}
                 currentSection={currentSection} setActiveSection={setActiveSection}/>
             <Content index={1} name={'About'}

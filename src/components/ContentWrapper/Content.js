@@ -3,6 +3,7 @@ import {Visibility} from 'semantic-ui-react';
 import Title from '../ContentWrapper/Title';
 import About from '../About';
 import Portfolio from '../Tabs/Portfolio';
+import {Container} from 'semantic-ui-react';
 
 function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
 
@@ -36,12 +37,13 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
     }
 
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}}>
-        <div style={{overflow:'auto'}}>
+    <Visibility fireOnMount onUpdate={handleUpdate} offset={[150,0]} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}} style={{overflow:'auto'}}>
+        <Container>
             <Title title={name} isVisible={isTitleSeen}/>
-            <div style={{minHeight:800, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>{contentSelect()}</div>
+                        <div >{contentSelect()}</div>
+        </Container>
+            
 
-        </div>
     </Visibility>
   );
 }
