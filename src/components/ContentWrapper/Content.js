@@ -39,7 +39,7 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
     <Visibility fireOnMount onUpdate={handleUpdate} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}}>
         <div style={{overflow:'auto'}}>
             <Title title={name} isVisible={isTitleSeen}/>
-            <div classname={"d-flex flex-column justify-content-around"}style={{minHeight:compHeight[0]}}>{contentSelect()}</div>
+            <div style={{minHeight:800, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>{contentSelect()}</div>
 
         </div>
     </Visibility>

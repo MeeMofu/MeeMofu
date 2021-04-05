@@ -15,7 +15,7 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
             <Sticky context={context}>
                 <ScrollTo>
                     {({scroll}) => (
-                        <nav className="row no-gutters col-12 header py-1" style={{borderBottom:'3px solid var(--text-hover)',width:windowWidth}}>
+                        <nav className="row no-gutters col-12 header py-1 px-md-5" style={{borderBottom:'3px solid var(--text-dark)',width:windowWidth}}>
                                 {Buttons.map((button, index)=>{
                                     return <NavButton index = {index} name = {button} scroll={scroll}
                                         currentSection={currentSection} setActiveSection={setActiveSection}

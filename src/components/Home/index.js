@@ -3,7 +3,7 @@ import {Visibility} from 'semantic-ui-react';
 import Canvas from './animatedBackGround';
 
 function Home({windowWidth, windowHeight, setActiveSection}) {
-    const navHeight = 43.33; // NavBar height, deaduct from Home section height to fit
+    const navHeight = 40.33; // NavBar height, deaduct from Home section height to fit
 
     const handleUpdate = (e,{calculations}) => {
         const {bottomVisible, topVisible, direction,percentagePassed} = calculations;
@@ -14,8 +14,8 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
 
     return(
       <Visibility fireOnMount onUpdate={handleUpdate}>
-        <div className={"text-center d-flex align-items-center justify-content-center"} style={{minHeight:300,height:(windowWidth>600?windowHeight-navHeight:windowHeight),position:'relative',fontFamily: "Ubuntu Mono",color:'white'}}>
-         <div style={{ position:'absolute'}} className={'p-5 mx-3'}>
+        <div className={"text-center d-flex align-items-center justify-content-center"} style={{height:(windowWidth>600?windowHeight-navHeight:windowHeight),position:'relative'}}>
+         <div style={{ position:'absolute',fontFamily: "Ubuntu Mono",color:'white'}} className={'p-5 mx-3'}>
                 <p style={(windowWidth>600)?
                     {fontSize:"40px"}:
                     {fontSize:"7vw"}} className={'m-0'}>

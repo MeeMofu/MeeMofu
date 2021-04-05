@@ -2,12 +2,12 @@ import React from 'react';
 
 const NavButton = ({index, name, currentSection,setActiveSection,compHeight,scroll,isMobile,isScroll, setScroll})=>{
     const handleScroll = () =>{
-        let distance = 1;// Slight offset to fully pass previous component
+        let distance = 3;// Slight offset to fully pass previous component
             for (var i = 0; i <index; i++) 
                 distance+=compHeight[i];
             // if (index === 1 && !isMobile)
             //     distance-= 40; // Offset the NavBar on first component when on desktop
-            if (index > 1 && isMobile)
+            if (index >= 1 && isMobile)
                 distance+= 44; //Offset on Mobile by navBar
 
         setScroll(true); // setScroll so that Navbar can't change

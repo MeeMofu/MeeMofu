@@ -3,7 +3,7 @@
   --header-hover: #11121a;
   --background: #a3bbaa;
   --text: rgba(63 ,233,69);
-  --text-hover: rgba(60,180,77);
+  --text-dark: rgb(34, 189, 57);
   --border: #6d3d14;
   --highlight: 63 ,233,69;
 }
@@ -103,7 +103,7 @@ footer {
 }
 
 footer a {
-  color: var(--text-hover);
+  color: var(--text-dark);
   margin: 10px 20px;
   transition: all .3s ease-in-out;
   text-decoration: none;
