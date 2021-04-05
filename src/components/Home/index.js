@@ -15,7 +15,7 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
     return(
       <Visibility fireOnMount onUpdate={handleUpdate}>
         <div className={"text-center d-flex align-items-center justify-content-center"} style={{minHeight:300,height:(windowWidth>600?windowHeight-navHeight:windowHeight),position:'relative',fontFamily: "Ubuntu Mono",color:'white'}}>
-         <div style={{backgroundColor:'rgba(10,15,22,0.8', borderRadius:'5vw', position:'absolute'}} className={'p-5 mx-3'}>
+         <div style={{ position:'absolute'}} className={'p-5 mx-3'}>
                 <p style={(windowWidth>600)?
                     {fontSize:"40px"}:
                     {fontSize:"7vw"}} className={'m-0'}>

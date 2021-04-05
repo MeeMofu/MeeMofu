@@ -16,20 +16,20 @@ const ContentWrapper = ({windowWidth, windowHeight,currentSection,setActiveSecti
             setCompHeight(temp);
         }
         
-    },[compHeight,windowHeight])
+    },[compHeight,windowHeight]);
 
     return (
         <div ref={contentRef}>
             <NavBar windowWidth= {windowWidth}  compHeight={compHeight} context={contentRef}
                 currentSection={currentSection} setActiveSection={setActiveSection}/>
-            <Content index={1} name={'About'} windowHeight= {windowHeight}
+            <Content index={1} name={'About'}
                 compHeight={compHeight} setCompHeight={setCompHeight}
                 setActiveSection={setActiveSection}/>
-            <Content index={2} name={'Portfolio'} windowHeight= {windowHeight}
+            <Content index={2} name={'Portfolio'}
                 compHeight={compHeight} setCompHeight={setCompHeight}
                 setActiveSection={setActiveSection}/>
             
-            <Contact windowHeight= {windowHeight}/>
+            <Contact/>
         </div>
         
         

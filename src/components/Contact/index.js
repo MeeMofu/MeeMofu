@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Contact({windowHeight}) {
+function Contact() {
 
   // Replace links with social media profiles
   const icons = [

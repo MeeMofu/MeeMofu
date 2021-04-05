@@ -5,8 +5,8 @@ const NavButton = ({index, name, currentSection,setActiveSection,compHeight,scro
         let distance = 1;// Slight offset to fully pass previous component
             for (var i = 0; i <index; i++) 
                 distance+=compHeight[i];
-            if (index === 1 && !isMobile)
-                distance-= 43; // Offset the NavBar on first component when on desktop
+            // if (index === 1 && !isMobile)
+            //     distance-= 40; // Offset the NavBar on first component when on desktop
             if (index > 1 && isMobile)
                 distance+= 44; //Offset on Mobile by navBar
 
