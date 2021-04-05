@@ -1,11 +1,13 @@
 import React,{useState} from 'react';
 import {Visibility} from 'semantic-ui-react';
+import Title from '../ContentWrapper/Title';
 import About from '../About';
 import Portfolio from '../Tabs/Portfolio';
 
 function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
 
-    const [isVisible, setVisible] = useState(false);
+    const [isTitleSeen, setTitle] = useState(false);
+    const [isSectionSeen, setSection] = useState(false);
 
     const handleUpdate = (e,{calculations}) => {
     // Function to set the active section (based on position of the widow)
@@ -19,12 +21,13 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
         temp[index]=height;
         setCompHeight(temp);
     }
-    if (onScreen&&topVisible) setVisible(true)
 }
+
+
     const contentSelect = ()=>{
         switch (name) {
             case 'About':
-                return <About isVisible={isVisible}/>
+                return <About isVisible={isSectionSeen}/>
             case 'Portfolio':
                 return <Portfolio/>
             default:
@@ -33,8 +36,12 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
     }
 
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate} onPassing={()=>{setVisible(true)}}>
-        <div>{contentSelect()}</div>
+    <Visibility fireOnMount onUpdate={handleUpdate} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}}>
+        <div style={{overflow:'auto'}}>
+            <Title title={name} isVisible={isTitleSeen}/>
+            <div classname={"d-flex flex-column justify-content-around"}style={{minHeight:compHeight[0]}}>{contentSelect()}</div>
+
+        </div>
     </Visibility>
   );
 }
