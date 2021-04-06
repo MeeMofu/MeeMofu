@@ -1,9 +1,9 @@
 import React,{ useState} from 'react';
-import { removeHyphensAndCapitalize } from '../../../utils/helpers';
+import { removeHyphensAndCapitalize } from '../../utils/helpers';
 import {Animated} from 'react-animated-css';
 import {Modal} from 'semantic-ui-react';
 import ReactMarkdown from 'react-markdown';
-import Title from '../../ContentWrapper/Title';
+import Title from '../Title';
 
 function Project({ project }) {
 
@@ -15,7 +15,7 @@ function Project({ project }) {
     <div className="project">
         <div className="project-container m-3" > 
             <img
-                src={require(`../../../assets/projects/${name}.jpg`).default}
+                src={require(`../../assets/projects/${name}.jpg`).default}
                 alt={`${removeHyphensAndCapitalize(name)} by Vinh Tran`}
                 className="project-bg"
             />

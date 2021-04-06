@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import NavBar from './Navbar';
+import NavBar from '../Navbar';
 import Contact from '../Contact';
 import Content from './Content';
 

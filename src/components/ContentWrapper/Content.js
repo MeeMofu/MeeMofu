@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import {Visibility} from 'semantic-ui-react';
-import Title from '../ContentWrapper/Title';
+import Title from '../Title';
 import About from '../About';
-import Portfolio from '../Tabs/Portfolio';
+import Portfolio from '../Portfolio/';
 import {Container} from 'semantic-ui-react';
 
 function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
