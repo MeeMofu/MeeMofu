@@ -58,25 +58,29 @@ export default class Canvas extends Component {
                 canvas.height = temp;
             }
 
+            const locationY = randomPlacement(windowYArray,$(window).innerHeight())
+
             const rectangle = canvas.display.polygon({
                 x: randomPlacement(windowXArray,$(window).innerWidth()),
-                y: randomPlacement(windowYArray,$(window).innerHeight()),
+                y: locationY,
                 origin: { x: 'center', y: 'center' },
                 sides:6,
                 rotation: Math.floor(Math.random()*90),
-                radius: 0,
+                radius: 20,
                 fill: '#d9ed92',
-                opacity: 1
+                opacity: 0
             });
             
             canvas.addChild(rectangle);
             
             rectangle.animate({
-                radius: 20,
-                opacity: 0
+                radius: 0,
+                rotation: 180,
+                opacity: 0.9,
+                y:locationY+60,
                 }, {
-                duration: '10000',
-                easing: 'linear',
+                duration: '1000',
+                easing: 'ease-out-quad',
                 callback: function () {
                             this.remove();
                     }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {Visibility} from 'semantic-ui-react';
 import Canvas from './animatedBackGround';
 
@@ -14,8 +14,8 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
 
     const styling = {
         background:{
-            background:' rgb(19,68,106)',
-            background: 'linear-gradient(307deg, rgba(19,68,106,1) 0%, rgba(26,117,159,1) 60%, rgba(82,182,154,1) 100%)',
+            // background:' rgb(19,68,106)',
+            background: 'linear-gradient(0deg, rgba(19,68,106,1) 0%, rgba(26,117,159,1) 35%, rgba(82,182,154,1) 100%)',
         },
         shader: {
             background:'var(--deepen)',

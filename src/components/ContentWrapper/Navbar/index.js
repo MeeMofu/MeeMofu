@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import NavButton from './BarButton';
 import {Sticky} from 'semantic-ui-react';
 
@@ -35,12 +35,12 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
             <ScrollTo>
                     {({scroll}) => (
                         <nav className="no-gutters col-12 header p-1" style={{borderBottom:'3px solid var(--text)',overflowX: 'auto', overflowY:'hidden', width: windowWidth,whiteSpace:'nowrap', height:43.33, textAlign:'center'}}>
-                                {Buttons.map((button, index)=>{
-                                    return <NavButton index = {index} name = {button} scroll={scroll}
-                                        currentSection={currentSection} setActiveSection={setActiveSection}
-                                        compHeight={compHeight} key={`BarButton-${index}` }isMobile={windowWidth}
-                                        isScroll={isScroll} setScroll={setScroll}/>
-                                })}
+                            {Buttons.map((button, index)=>{
+                                return <NavButton index = {index} name = {button} scroll={scroll}
+                                    currentSection={currentSection} setActiveSection={setActiveSection}
+                                    compHeight={compHeight} key={`BarButton-${index}` }isMobile={windowWidth}
+                                    isScroll={isScroll} setScroll={setScroll}/>
+                            })}
                         </nav>
                     )}
 

@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import Home from './components/Home';
 import ContentWrapper from './components/ContentWrapper';
 
