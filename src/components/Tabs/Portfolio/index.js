@@ -18,7 +18,9 @@ The current API used for searching airports only provide results within the US`,
     },
     {
       name: 'just-chattin',
-      description: `This application is a collab with two members in our UCF programming bootcamp course. The base of our application is [ChatCord](https://github.com/bradtraversy/chatcord). My role was to provide more functionality in the backend so that users can be authenticated. Once creating an account and logging in, users are provided with cookies so that socket.io can identify which user is sending a message, disconnecting, and logging out.`,
+      description: `This application is a collab with two members in our UCF programming bootcamp course. The base of our application is [ChatCord](https://github.com/bradtraversy/chatcord). My role was to provide more functionality in the backend so that users can be authenticated.
+      
+Once creating an account and logging in, users are provided with cookies so that socket.io can identify which user is sending a message, disconnecting, and logging out.`,
       skills:['Express.js','Node.js', 'Socket.io', 'MySQL','Sequelize', 'Handelbars'],
       link: "https://just-chattin.herokuapp.com/",
       repo: "https://github.com/jcgom3/Just-Chattin"
