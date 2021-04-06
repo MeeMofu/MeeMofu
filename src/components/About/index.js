@@ -103,9 +103,7 @@ function About({isVisible}) {
                         </p>
                         </div>
                     </div>
-          
         </Animated>
-       
 
         <div className="pt-3 pb-4 pb-sm-0" style={styling.attributeContainer}>
             {skills.map((skill,index)=>{
@@ -124,61 +122,52 @@ function About({isVisible}) {
                     </Animated>
                 </div>
             })}
-            
         </div>
             
       <div className='pb-4 pt-5 pt-md-3' style={{maxWidth:950,margin:'0px auto 50px auto', boxSizing:'border-box'}}>
-            
         <Animated animationIn="bounceInLeft" animationInDuration={1700} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={600} isVisible={isVisible}>
           <div className={'row pl-0 p-4 mx-0'} style={{textShadow:'1px 1px 3px rgba(0,48,73,0.97)', backgroundColor:'#26ACB1', borderRadius:10, marginBottom:10 }}>
                 <Animated animationIn="fadeInRight" animationInDuration={1000} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={1800} isVisible={isVisible} style={{ margin:'auto auto'}}>
                     <h2 className={'col-12 col-md-3 text-center pb-2 pb-md-0'} style={{fontWeight:'bold', color:'var(--background)'}}>Frontend</h2>
-
                 </Animated>
                 <div className={'d-flex col-12 col-md-9 justify-content-around p-0'} >
                     {frontend.map((skill,index)=>{
-                        return <Animated animationIn="fadeInUp" animationInDuration={1000} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={1600+index*100} isVisible={isVisible}>
+                        return (<div key={`frontend-${index}`}>
+                            
+                        <Animated  animationIn="fadeInUp" animationInDuration={1000} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={1600+index*100} isVisible={isVisible}>
                             <div className={'d-block text-center'}>
                                 <i className ={skill.icon} style={{fontSize:45, color:'var(--background)'}}></i>
                                 <div style={{fontWeight:'bold', color:'var(--background)' ,fontSize:'11px'}}>{skill.title}</div>
-
-
                             </div>
-
                         </Animated>
-
+                        </div>)
                     })}
                 </div>
           </div>
         </Animated>
 
         <Animated animationIn="bounceInRight" animationInDuration={1700} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={600} isVisible={isVisible}>
-            
-
           <div className={'row p-4 mx-0 text-right'} style={{textShadow:'1px 1px 3px rgba(0,48,73,0.97)', backgroundColor:'#165F98',width: '100%', borderRadius:10}}>
                 <div className={'d-flex col-12 col-md-9 justify-content-around p-0'} >
                     {backend.map((skill,index)=>{
-                        return <Animated animationIn="fadeInUp" animationInDuration={1000} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={1600+index*100} isVisible={isVisible}>
-                        <div className={'d-block text-center'}>
-                            <i className ={skill.icon} style={{fontSize:45, color:'var(--background)'}}></i>
-                            <div style={{fontWeight:'bold', color:'var(--background)',fontSize:'11px'}}>{skill.title}</div>
-
-
-                        </div>
-
-                        </Animated>
-
+                        return (<div key={`backend-${index}`}>
+                            <Animated animationIn="fadeInUp" animationInDuration={1000} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={1600+index*100} isVisible={isVisible}>
+                            <div className={'d-block text-center'}>
+                                <i className ={skill.icon} style={{fontSize:45, color:'var(--background)'}}></i>
+                                <div style={{fontWeight:'bold', color:'var(--background)',fontSize:'11px'}}>{skill.title}</div>
+                            </div>
+                            </Animated>
+                        </div>)
                     })}
                 </div>
                 <Animated animationIn="fadeInLeft" animationInDuration={1000} animationOutDuration={0}  animationOut="fadeOut"  animationInDelay={1800} isVisible={isVisible} style={{ margin:'auto auto'}}>
                     <h2 className={'col-12 col-md-3 text-center pt-2 pt-md-0'} style={{fontWeight:'bold', color:'var(--background)'}}>Backend</h2>
-
                 </Animated>
           </div>
-    </Animated>
+        </Animated>
               
-      </div>
-      </>
+    </div>
+    </>
 
   );
 }

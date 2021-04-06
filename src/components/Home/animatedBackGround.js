@@ -1,22 +1,20 @@
 import React, {Component} from 'react';
+import oCanvas from 'ocanvas';
+
 
 export default class Canvas extends Component {
     componentDidMount () {
-        const canvas = document.createElement('canvas');
-        canvas.setAttribute("id", "canvas");
-        document.getElementById('container').appendChild(canvas);
-        const animatedScript = document.createElement('script');
-        animatedScript.setAttribute("id", "animate");
-        document.getElementById('container').appendChild(animatedScript);
-        document.getElementById('animate').innerHTML=`
-        // Hardcoded script to animate canvas that's appended after mount. Original, unmodified code can be found here:
+        const canvasEle = document.createElement('canvas');
+        canvasEle.setAttribute("id", "canvas");
+        document.getElementById('container').appendChild(canvasEle);
+        // Script to animate canvas that's appended after mount. Original, unmodified code can be found here:
         //  https://codepen.io/html5andblog/details/jWbLbj
         
         let windowXArray = [];
         let windowYArray = [];
         
-        const startWidth = $(window).innerWidth();
-        const startHeight = $(window).innerHeight();
+        const startWidth = window.innerWidth;
+        const startHeight = window.innerHeight;
 
         for (let i = 0; i < startWidth; i++) {
             windowXArray.push(i);
@@ -29,10 +27,9 @@ export default class Canvas extends Component {
         function randomPlacement(array,length) {
             return array[Math.floor(Math.random()*length)];
         }
-            
-        
-        let canvas = oCanvas.create({
-            canvas: '#canvas',
+
+        const canvas = oCanvas.create({
+            canvas:'#canvas',
             // background: '#154A7F',
             fps: 60
         });
@@ -43,25 +40,25 @@ export default class Canvas extends Component {
         setInterval(function(){
 
             // Handle size increase at every interval, size decrease doesn't matter
-            if ($(window).innerWidth()!==canvas.width) {
-                const temp = $(window).innerWidth();
+            if (window.innerWidth!==canvas.width) {
+                const temp = window.innerWidth;
                 for (let i = canvas.width; i < temp; i++) {
                     windowXArray.push(i);
                 }
                 canvas.width = temp;
             }
-            if ($(window).innerHeight()!==canvas.height) {
-                const temp = $(window).innerHeight();
+            if (window.innerHeight!==canvas.height) {
+                const temp = window.innerHeight;
                 for (let i = canvas.height; i < temp; i++) {
                     windowYArray.push(i);
                 }
                 canvas.height = temp;
             }
 
-            const locationY = randomPlacement(windowYArray,$(window).innerHeight())
+            const locationY = randomPlacement(windowYArray,window.innerHeight)
 
             const rectangle = canvas.display.polygon({
-                x: randomPlacement(windowXArray,$(window).innerWidth()),
+                x: randomPlacement(windowXArray,window.innerWidth),
                 y: locationY,
                 origin: { x: 'center', y: 'center' },
                 sides:6,
@@ -88,7 +85,7 @@ export default class Canvas extends Component {
 
         }, 200);
 
-`
+
     }
     render() {
       return (

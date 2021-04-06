@@ -1,6 +1,7 @@
 :root {
   --header: #092d52;
-  --header-hover: #11121a;
+  --header-light: #184e77;
+  --header-hover: #2b90be;
   --background: #EDF2F4;
   --text: #c6e46d;
   --text-dark: #48B880;
@@ -22,7 +23,11 @@
   background-size:cover;
 }
 
-h1 { font-family: Arvo; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Arvo; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Arvo; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Arvo; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Arvo; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+h1 { font-family: Arvo; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+h3 { font-family: Arvo; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+p { font-family: Arvo; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400;}
+blockquote { font-family: Arvo; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; }
+pre { font-family: Arvo; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
 
 /* .hl {
@@ -59,9 +64,9 @@ div .tabActive{
 }
 
 .project-bg {
-  /* position: relative; */
   width: 100%;
   height: 100%;
+  border-radius: 15px;
 }
 
 
@@ -76,20 +81,38 @@ div .tabActive{
   left: 0px;
   right: 0px;
   z-index: 10;
-  opacity: 0;
-  transition: all .5s ease-in-out;
+  border-radius: 15px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .project-text:hover {
   opacity: 1;
-  background-color: rgba(var(--highlight),0.7);
+  background:linear-gradient(45deg, rgba(153,217,140,0.9) 0%, rgba(217,237,146,0.8) 100%);
 }
 
-.project-text h3 {
-  font-size: 2.5rem;
+.learnMoreBtn {
+  color:var(--header-light);
+  text-align: center;
+  border:1.5px solid var(--header);
+  border-radius:  3px;
+  width: 100px;
+  margin: 0px auto;
+  cursor: pointer; 
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.project-text a {
+.learnMoreBtn:hover {
+  color: var(--header-hover);
+  border:1.5px solid var(--header-hover);
+}
+
+/* .project-text a {
   text-decoration: none;
   font-weight: bold;
   color: var(--header);
@@ -98,7 +121,7 @@ div .tabActive{
 
 .project-text a:hover {
   color: var(--header-hover);
-}
+} */
 
 footer {
   font-size: 48px;
@@ -119,12 +142,6 @@ footer a:hover {
   color: var(--text);
 }
 
-@media screen and (max-width: 800px) {
-  .project-text {
-    opacity: 1;
-    background-color: rgba(var(--highlight),0.3);
-  }
-}
 
 
 @media (prefers-reduced-motion: no-preference) {

@@ -37,7 +37,7 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
     }
 
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate} offset={[150,0]} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}} style={{overflow:'auto'}}>
+    <Visibility fireOnMount onUpdate={handleUpdate} offset={[200,0]} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}} style={{overflow:'auto'}}>
         <Container>
             <Title title={name} isVisible={isTitleSeen}/>
                         <div >{contentSelect()}</div>

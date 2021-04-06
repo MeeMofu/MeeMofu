@@ -43,14 +43,14 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
                 <p style ={(windowWidth>600)?
                     {fontSize:"50px",fontWeight:'bold'}:
                     {fontSize:"12vw", fontWeight:'bold'}} 
-                    className={'p-2 m-0'}>VINH TRAN</p>
+                    className={'p-3 m-0'}>VINH TRAN</p>
                 <p style={(windowWidth>600)?
                     {fontSize:"20px"}:
                     {fontSize:"5.5vw"}} className={'m-0'}
                     >Electrical Engineer {'&'} full stack web developer</p>
                 <i className={"fas fa-mug-hot pt-5"} style={{fontSize:`${(windowWidth>600)?'100px':'20vw'}`, color:' var(--text)'}}></i>
             </div>
-            <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight)} />
+            <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight+navHeight)} />
             </div>
 
         </div>

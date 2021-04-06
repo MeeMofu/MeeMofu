@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://meemofu.github.io/portfolio",
+  "homepage": "https://MeeMofu.github.io/MeeMofu",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "react-burger-menu": "^3.0.6",
     "react-dom": "^17.0.1",
     "react-headroom": "^3.1.1",
+    "react-markdown": "^5.0.3",
     "react-scripts": "4.0.1",
     "react-scroll-to": "^3.0.0-beta.6",
     "semantic-ui-css": "^2.4.1",
