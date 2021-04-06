@@ -30,7 +30,7 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
             case 'About':
                 return <About isVisible={isSectionSeen}/>
             case 'Portfolio':
-                return <Portfolio/>
+                return <Portfolio isVisible={isSectionSeen}/>
             default:
                 return <div/>
         }

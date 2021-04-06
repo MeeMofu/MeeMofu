@@ -5,7 +5,7 @@
   --text: #c6e46d;
   --text-dark: #48B880;
   --border: #6d3d14;
-  --highlight: 63 ,233,69;
+  --highlight: 220, 242, 141;
   --deepen: #0c2f5269;
 }
 .header {
@@ -92,12 +92,12 @@ div .tabActive{
 .project-text a {
   text-decoration: none;
   font-weight: bold;
-  color: var(--dark);
+  color: var(--header);
   transition: all .3s ease-in-out;
 }
 
 .project-text a:hover {
-  color: var(--darker);
+  color: var(--header-hover);
 }
 
 footer {

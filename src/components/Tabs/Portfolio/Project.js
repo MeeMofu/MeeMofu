@@ -6,7 +6,7 @@ function Project({ project }) {
   const { name, repo, link, description } = project;
 
   return (
-    <div className="project col-12 col-md-6 p-0" key={name}>
+    <div className="project " key={name}>
         <div className="project-container m-3">
             <img
                 src={require(`../../../assets/projects/${name}.jpg`).default}
