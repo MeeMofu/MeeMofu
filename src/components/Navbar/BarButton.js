@@ -8,7 +8,7 @@ const NavButton = ({index, name, currentSection,setActiveSection,compHeight,scro
             // if (index === 1 && !isMobile)
             //     distance-= 40; // Offset the NavBar on first component when on desktop
             if (index >= 1 && isMobile)
-                distance+= 88; //Offset on Mobile by navBar
+                distance+= 44; //Offset on Mobile by navBar
 
         setScroll(true); // setScroll so that Navbar can't change
         scroll({x:0,y: distance, smooth:true});

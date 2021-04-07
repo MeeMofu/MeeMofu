@@ -5,7 +5,7 @@ import About from '../About';
 import Portfolio from '../Portfolio/';
 import {Container} from 'semantic-ui-react';
 
-function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
+function Content({index,name,compHeight,setCompHeight,setActiveSection,setScroll}) {
 
     const [isTitleSeen, setTitle] = useState(false);
     const [isSectionSeen, setSection] = useState(false);
@@ -22,6 +22,7 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
         temp[index]=height;
         setCompHeight(temp);
     }
+
 }
 
 
@@ -37,11 +38,14 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection}) {
     }
 
   return (
-    <Visibility fireOnMount onUpdate={handleUpdate} offset={[200,0]} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}} style={{overflow:'auto'}}>
-        <Container>
-            <Title title={name} isVisible={isTitleSeen}/>
-                        <div >{contentSelect()}</div>
-        </Container>
+    <Visibility once={false} onTopPassed={()=>{if(setScroll) setScroll(true)}} onTopVisibleReverse={()=>{if(setScroll) setScroll(false)}} >
+        <Visibility fireOnMount onUpdate={handleUpdate} offset={[200,0]} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}} style={{overflow:'auto'}}>
+            <Container>
+                <Title title={name} isVisible={isTitleSeen}/>
+                            <div >{contentSelect()}</div>
+            </Container>
+
+        </Visibility>
             
 
     </Visibility>

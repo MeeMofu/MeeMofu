@@ -50,7 +50,7 @@ function Home({windowWidth, windowHeight, setActiveSection}) {
                     >Electrical Engineer {'&'} full stack web developer</p>
                 <i className={"fas fa-mug-hot pt-5"} style={{fontSize:`${(windowWidth>600)?'100px':'20vw'}`, color:' var(--text)'}}></i>
             </div>
-            <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight+navHeight)} />
+            <Canvas windowWidth={windowWidth} windowHeight= {(windowWidth>600?windowHeight-navHeight:windowHeight)} />
             </div>
 
         </div>

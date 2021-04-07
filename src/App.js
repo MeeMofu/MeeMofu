@@ -40,12 +40,26 @@ function App() {
 
   const { windowHeight, windowWidth } = useWindowDimensions();
 
+  const [compHeight,setCompHeight] = useState([windowHeight,0,0,0]);
+  
+  
+  useEffect(()=>{
+    // Update Home Height.
+    if (windowHeight !== compHeight[0]){
+        const temp = compHeight;
+        temp[0]=windowHeight;
+        setCompHeight(temp);
+    }
+    
+},[compHeight,windowHeight]);
+
   return (
     <div>
       <Home windowWidth={windowWidth} windowHeight= {windowHeight} 
         setActiveSection={setActiveSection}/>  
       <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight}
-        currentSection={currentSection} setActiveSection={setActiveSection} />
+        currentSection={currentSection} setActiveSection={setActiveSection} 
+        compHeight={compHeight} setCompHeight={setCompHeight}/>
     </div>
   );
 }

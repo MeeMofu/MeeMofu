@@ -34,9 +34,9 @@ Once creating an account and logging in, users are provided with cookies so that
     },
     {
       name: 'CMS-blog',
-      description: `An experiemntal project for a blogging site. Users can create an account, post their own blog post, and comment on other posts. User info, blog content, and comments.
+      description: `An experimental project for a blogging site. Users can create an account, post their own blog post, and comment on other posts. User infos, blog posts, and comments are stored in the server.
       
-The current page does not have any content approval nor moderators, so please proceed with caution and have courtesy. Thank you in advance.`,
+The current page does not have any content approval nor moderators, so please proceed with caution and be thoughtful. Thank you in advance.`,
       skills:['Express.js','Node.js','MySQL','Sequelize', 'Handelbars'],
       link: "https://radiant-citadel-50156.herokuapp.com/",
       repo: "https://github.com/MeeMofu/CMS-blog"

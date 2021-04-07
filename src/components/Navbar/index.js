@@ -5,13 +5,11 @@ import {Sticky} from 'semantic-ui-react';
 import Headroom from 'react-headroom';
 import {ScrollTo} from 'react-scroll-to';
 
-const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context})=>{
+const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context, startScroll})=>{
 
     const Buttons = ['Home', 'About', 'Portfolio','Contact'];
     const [isScroll, setScroll] = useState(false);
 
-    
-    
     if (windowWidth>600)
         return (
             <Sticky context={context}>
@@ -30,7 +28,8 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
                 </ScrollTo>
             </Sticky>
         )
-    else return (
+    if (startScroll && windowWidth<=600) 
+        return (
         <Headroom style={{zIndex:900}}>
             <ScrollTo>
                     {({scroll}) => (
@@ -46,5 +45,6 @@ const NavBar = ({windowWidth,currentSection,compHeight,setActiveSection, context
 
                 </ScrollTo>
         </Headroom>)
+    return <></>
 }
 export default NavBar
