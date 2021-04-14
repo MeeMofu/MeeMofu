@@ -106,14 +106,15 @@ div .tabActive{
 }
 
 footer {
-  font-size: 48px;
   justify-content: center;
   background-color: var(--header);
+  height:100%;
+  overflow-x: auto;
 }
 
 footer a {
   color: var(--text-dark);
-  margin: 10px 20px;
+  margin: 0px 20px;
   transition: all .3s ease-in-out;
   text-decoration: none;
 }

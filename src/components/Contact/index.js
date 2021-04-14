@@ -6,29 +6,52 @@ function Contact() {
   const icons = [
     {
       name: "fab fa-github",
+      label: 'Github',
       title:'My GitHub',
+      size: '55px',
       link: "https://github.com/MeeMofu"
     },
     {
       name: "fab fa-linkedin",
+      label: 'LinkedIn',
       title:'My LinkedIn',
+      size: '58px',
       link: "https://www.linkedin.com/in/vinh-tran144/"
     },
     {
       name: "fas fa-envelope",
-      title:'Email me',
+      label: 'Email',
+      title:'My email',
+      size: '61.5px',
       link: "mailto: tranvinh144@gmail.com"
+    },
+    {
+      name: "fas fa-file-alt",
+      label: 'Resume',
+      title:'My resume',
+      size: '55px',
+      link: "https://docs.google.com/document/d/1HhRIBI9cc9M02e8jKl0jreRsBraAR4sO1XUuGLYFQ0U/edit?usp=sharing"
     }
   ]
 
   return (
-    <footer className="d-flex justify-content-center w-100" >
-      {icons.map(icon =>
-      (
-        <a href={icon.link} key={icon.name} title={icon.title} target="_blank" rel="noopener noreferrer"><i className={icon.name}></i></a>
-      )
-        )}
-     
+    <footer>
+      {/* <div className ={'pt-4 pb-3'} style={{textAlign:'center', color:'var(--text-dark)'}}>
+        <p style={{fontWeight:'normal'}} className="m-1">Email me:</p>
+        <p > tranvinh144@gmail.com</p>
+
+      </div> */}
+      <div className="d-flex justify-content-center" style ={{padding:'33px 0px 14px 0px'}} >
+        {icons.map(icon =>
+        (
+          <div className={'d-flex text-center justify-content-between flex-column'} key={icon.name} style={{height:81}}>
+              <a href={icon.link} style={{fontSize:icon.size}} title={icon.title} target="_blank" rel="noopener noreferrer"><i className={`${icon.name}`}></i></a>
+              <div style={{fontWeight:'bold',color:'var(--text-dark)',fontSize:'12px'}}>{icon.label}</div>
+          </div>
+        )
+          )}
+
+      </div>
     </footer>
   );
 }
