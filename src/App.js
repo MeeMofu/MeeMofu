@@ -54,13 +54,13 @@ function App() {
 },[compHeight,windowHeight]);
 
   return (
-    <div>
+    <>
       <Home windowWidth={windowWidth} windowHeight= {windowHeight} 
         setActiveSection={setActiveSection}/>  
       <ContentWrapper windowWidth={windowWidth} windowHeight= {windowHeight}
         currentSection={currentSection} setActiveSection={setActiveSection} 
         compHeight={compHeight} setCompHeight={setCompHeight}/>
-    </div>
+    </>
   );
 }
 

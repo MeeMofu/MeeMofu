@@ -47,12 +47,9 @@ function Content({index,name,compHeight,setCompHeight,setActiveSection,setScroll
         <Visibility fireOnMount onBottomVisible={handleLargeScreen} onUpdate={handleUpdate} offset={[200,0]} onPassing={()=>{setSection(true)}} onOnScreen={()=>{setTitle(true)}} style={{overflow:'auto'}}>
             <Container>
                 <Title title={name} isVisible={isTitleSeen}/>
-                            <div >{contentSelect()}</div>
+                    {contentSelect()}
             </Container>
-
         </Visibility>
-            
-
     </Visibility>
   );
 }
