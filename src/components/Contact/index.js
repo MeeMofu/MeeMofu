@@ -18,13 +18,13 @@ function Contact() {
       size: '58px',
       link: "https://www.linkedin.com/in/vinh-tran144/"
     },
-    {
-      name: "fas fa-envelope",
-      label: 'Email',
-      title:'My email',
-      size: '61.5px',
-      link: "mailto: tranvinh144@gmail.com"
-    },
+    // {
+    //   name: "fas fa-envelope",
+    //   label: 'Email',
+    //   title:'My email',
+    //   size: '61.5px',
+    //   link: "mailto: tranvinh144@gmail.com"
+    // },
     {
       name: "fas fa-file-alt",
       label: 'Resume',
@@ -36,11 +36,6 @@ function Contact() {
 
   return (
     <footer>
-      {/* <div className ={'pt-4 pb-3'} style={{textAlign:'center', color:'var(--text-dark)'}}>
-        <p style={{fontWeight:'normal'}} className="m-1">Email me:</p>
-        <p > tranvinh144@gmail.com</p>
-
-      </div> */}
       <div className="d-flex justify-content-center" style ={{padding:'33px 0px 14px 0px'}} >
         {icons.map(icon =>
         (
@@ -50,6 +45,11 @@ function Contact() {
           </div>
         )
           )}
+
+      </div>
+      <div className ={'pt-2 pb-4'} style={{textAlign:'center', color:'var(--text-dark)'}}>
+        <p className="m-1">Email me:</p>
+        <p  style={{fontWeight:'bold'}}> tranvinh144@gmail.com</p>
 
       </div>
     </footer>
